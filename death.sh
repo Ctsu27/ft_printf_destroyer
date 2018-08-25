@@ -45,7 +45,10 @@ for str in "${dtest[@]}"
 do
 	./$bin 1 $str > rl_pf;
 	./$bin 0 $str > ft_pf;
-	diff -s rl_pf ft_pf;
+	if ! diff -s rl_pf ft_pf;
+	then
+		echo "\033[0;31merror:\033[0m $str"
+	fi
 done
 
 
