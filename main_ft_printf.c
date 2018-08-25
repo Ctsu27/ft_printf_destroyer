@@ -6,7 +6,7 @@
 /*   By: kehuang <kehuang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/25 10:46:47 by kehuang           #+#    #+#             */
-/*   Updated: 2018/08/25 10:56:45 by kehuang          ###   ########.fr       */
+/*   Updated: 2018/08/25 13:21:29 by kehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,49 @@ int		ft_printf(char const *fmt, ...);
 
 int		dtest(int (*out)(char const *, ...), char *str, void *varg)
 {
-	int		n;
+	long	n;
 
-	n = (int)varg;
+	n = (long)varg;
+	return (out(str, n));
+}
+
+int		utest(int (*out)(char const *, ...), char *str, void *varg)
+{
+	unsigned long	n;
+
+	n = (unsigned long)varg;
+	return (out(str, n));
+}
+
+int		otest(int (*out)(char const *, ...), char *str, void *varg)
+{
+	unsigned long	n;
+
+	n = (unsigned long)varg;
+	return (out(str, n));
+}
+
+int		xtest(int (*out)(char const *, ...), char *str, void *varg)
+{
+	unsigned long	n;
+
+	n = (unsigned long)varg;
+	return (out(str, n));
+}
+
+int		x_test(int (*out)(char const *, ...), char *str, void *varg)
+{
+	unsigned long	n;
+
+	n = (unsigned long)varg;
+	return (out(str, n));
+}
+
+int		ptest(int (*out)(char const *, ...), char *str, void *varg)
+{
+	unsigned long	n;
+
+	n = (unsigned long)varg;
 	return (out(str, n));
 }
 
@@ -30,7 +70,7 @@ int		main(int argc, char **argv)
 	int		(*out[2])(char const *, ...) = {&printf, &ft_printf};
 	int		(*test[10])(int (*f)(char const *, ...), char *, void *) = {
 		&dtest,
-//		&utest, &otest, &xtest, &x_test, &ptest,
+		&utest, &otest, &xtest, &x_test, &ptest,
 //		&ctest,
 //		&stest,
 //		&c_test,
