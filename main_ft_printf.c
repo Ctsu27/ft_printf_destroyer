@@ -6,7 +6,7 @@
 /*   By: kehuang <kehuang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/25 10:46:47 by kehuang           #+#    #+#             */
-/*   Updated: 2018/09/14 17:23:28 by kehuang          ###   ########.fr       */
+/*   Updated: 2018/09/14 18:33:39 by kehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ int		utest(int (*out)(char const *, ...), char *str, void *varg) {
 	return (out(str, (unsigned long)varg));
 }
 
+int		ptest(int (*out)(char const *, ...), char *str, void *varg) {
+	return (out(str, &varg));
+}
+
 int		ctest(int (*out)(char const *, ...), char *str, void *varg) {
 	return (out(str, (char)varg));
 }
@@ -48,7 +52,7 @@ int		main(int argc, char **argv)
 	int		(*out[2])(char const *, ...) = {&printf, &ft_printf};
 	int		(*test[10])(int (*f)(char const *, ...), char *, void *) = {
 		&dtest,
-		&utest, &utest, &utest, &utest, &utest,
+		&utest, &utest, &utest, &utest, &ptest,
 		&ctest,
 //		&stest,
 //		&c_test,
