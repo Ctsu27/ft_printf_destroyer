@@ -6,7 +6,7 @@
 /*   By: kehuang <kehuang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/25 10:46:47 by kehuang           #+#    #+#             */
-/*   Updated: 2018/09/14 12:39:34 by kehuang          ###   ########.fr       */
+/*   Updated: 2018/09/14 17:23:28 by kehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int		ft_printf(char const *fmt, ...);
 
 #define RET "ret = %d\n"
 #define SCONVERTER "duoxXpcs"
+#define START_TEST 0
+#define RANGE_TEST 1001
 
 int		get_cvt(char *s) {
 	char const	*sconv = SCONVERTER;
@@ -74,16 +76,16 @@ int		main(int argc, char **argv)
 
 //	delim test for integer
 	if (argv[2][0] == 'd') {
-		start = -500;
-		end = 500;
+		start = START_TEST - (RANGE_TEST / 2);
+		end = (RANGE_TEST / 2);
 	}
 	else if (argv[2][0] == 'c') {
-		start = -300;
-		end = 300;
+		start = -256;
+		end = 256;
 	}
 	else {
-		start = 0;
-		end = 1000;
+		start = START_TEST;
+		end = RANGE_TEST;
 	}
 
 //	get the function 0 == printf :: 1 == ft_printf
