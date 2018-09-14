@@ -3358,8 +3358,8 @@ rm -f prl.pf pft.pf
 echo "_______________________ \033[1;36md converter\033[0m"
 for str in "${dtest[@]}"
 do
-	./$bin 0 "d" $str >> drl.pf;
-	./$bin 1 "d" $str >> dft.pf;
+	./$bin 0 "d" $str > drl.pf;
+	./$bin 1 "d" $str > dft.pf;
 	if ! diff drl.pf dft.pf &> /dev/null;
 	then
 		echo "\"$str\" \033[0;31mKO\033[0m"
@@ -3372,8 +3372,8 @@ done
 echo "_______________________ \033[1;36mu converter\033[0m"
 for str in "${utest[@]}"
 do
-	./$bin 0 "u" $str >> url.pf;
-	./$bin 1 "u" $str >> uft.pf;
+	./$bin 0 "u" $str > url.pf;
+	./$bin 1 "u" $str > uft.pf;
 	if ! diff url.pf uft.pf &> /dev/null;
 	then
 		echo "\"$str\" \033[0;31mKO\033[0m"
@@ -3386,8 +3386,8 @@ done
 echo "_______________________ \033[1;36mo converter\033[0m"
 for str in "${otest[@]}"
 do
-	./$bin 0 "o" $str >> orl.pf;
-	./$bin 1 "o" $str >> oft.pf;
+	./$bin 0 "o" $str > orl.pf;
+	./$bin 1 "o" $str > oft.pf;
 	if ! diff orl.pf oft.pf &> /dev/null;
 	then
 		echo "\"$str\" \033[0;31mKO\033[0m"
@@ -3400,8 +3400,8 @@ done
 echo "_______________________ \033[1;36mx converter\033[0m"
 for str in "${xtest[@]}"
 do
-	./$bin 0 "x" $str >> xrl.pf;
-	./$bin 1 "x" $str >> xft.pf;
+	./$bin 0 "x" $str > xrl.pf;
+	./$bin 1 "x" $str > xft.pf;
 	if ! diff xrl.pf xft.pf &> /dev/null;
 	then
 		echo "\"$str\" \033[0;31mKO\033[0m"
@@ -3414,8 +3414,8 @@ done
 echo "_______________________ \033[1;36mX converter\033[0m"
 for str in "${Xtest[@]}"
 do
-	./$bin 0 "X" $str >> x_rl.pf;
-	./$bin 1 "X" $str >> x_ft.pf;
+	./$bin 0 "X" $str > x_rl.pf;
+	./$bin 1 "X" $str > x_ft.pf;
 	if ! diff x_rl.pf x_ft.pf &> /dev/null;
 	then
 		echo "\"$str\" \033[0;31mKO\033[0m"
@@ -3426,8 +3426,8 @@ done
 
 #	%c convert test
 echo "_______________________ \033[1;36mc converter\033[0m"
-./$bin 0 "c" "%%d:[%c]" >> crl.pf;
-./$bin 1 "c" "%%d:[%c]" >> cft.pf;
+./$bin 0 "c" "%%d:[%c]" > crl.pf;
+./$bin 1 "c" "%%d:[%c]" > cft.pf;
 if ! diff crl.pf cft.pf &> /dev/null;
 then
 	echo "\""%%d: [%c]"\" \033[0;31mKO\033[0m"
@@ -3439,8 +3439,8 @@ fi
 echo "_______________________ \033[1;36mp converter\033[0m"
 for str in "${ptest[@]}"
 do
-	./$bin 0 "p" $str >> prl.pf;
-	./$bin 1 "p" $str >> pft.pf;
+	./$bin 0 "p" $str > prl.pf;
+	./$bin 1 "p" $str > pft.pf;
 	if ! diff prl.pf pft.pf &> /dev/null;
 	then
 		echo "\"$str\" \033[0;31mKO\033[0m"
