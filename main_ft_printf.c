@@ -6,7 +6,7 @@
 /*   By: kehuang <kehuang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/25 10:46:47 by kehuang           #+#    #+#             */
-/*   Updated: 2018/09/14 18:33:39 by kehuang          ###   ########.fr       */
+/*   Updated: 2018/10/11 21:38:08 by kehuang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,10 +105,6 @@ int		main(int argc, char **argv)
 			out[i](RET, out[i](argv[3], c));
 		out[i](RET, out[i](argv[3], -2147483648));
 		out[i](RET, out[i](argv[3], 2147483647));
-		out[i](RET, out[i](argv[3], -2147483649));
-		out[i](RET, out[i](argv[3], 2147483648));
-		out[i](RET, out[i](argv[3], 4294967296));
-		out[i](RET, out[i](argv[3], 4294967297));
 	}
 	else
 		out[i](RET, out[i](argv[3], 42));
